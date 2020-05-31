@@ -91,6 +91,11 @@ h1 {
     <h1>Test Grid</h1>
 
     <div class="row">
+	
+      <div class="col-md-2">
+        <div class="trash">
+        </div>
+      </div>
       <div class="col-md-2">
         <div class="sidebar">
           
@@ -102,10 +107,6 @@ h1 {
             <div class="grid-stack-item-content">Drag me</div>
           </div>
 
-        </div>
-      </div>
-      <div class="col-md-2">
-        <div class="trash">
         </div>
       </div>
         <div class="grid-stack grid-stack-6">
@@ -130,8 +131,12 @@ h1 {
     var grids = GridStack.initAll(options);
     grids[1].float(true);
 
-    var items = [
-      
+ var items = [
+      {x: 0, y: 0, width: 2, height: 2},
+      {x: 3, y: 1, width: 1, height: 2},
+      {x: 4, y: 1, width: 1, height: 1},
+      {x: 2, y: 3, width: 3, height: 1, minWidth: 2, id: 'special', text: 'has minWidth=2'},
+      {x: 2, y: 5, width: 1, height: 1}
     ];
 
     grids.forEach(function (grid, i) {
